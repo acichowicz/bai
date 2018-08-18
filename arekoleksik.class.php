@@ -1,4 +1,4 @@
-public class ArkadiuszOleksik{
-    private $firstName = "Arkdiusz";
-    private $lastName = "Oleksik";
+class ArkadiuszOleksik{
+    protected  $firstName = "Arkdiusz";
+    protected  $lastName = "Oleksik";
 }
