@@ -11,4 +11,9 @@ abstract class Person implements PersonInterface {
 	public function getLastName() {
 		return $this->lastName;
 	}
+        
+        public function getCounter(){
+            $count += 1;
+            return $count;
+        }
 }
