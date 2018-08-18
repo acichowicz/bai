@@ -1,6 +1,8 @@
 <?php
 
-class KonradMaslowiec {
+require_once 'person.abstract.php';
+
+class KonradMaslowiec extends Person{
     
     protected $firstName = "Konrad";
     protected $lastName = "Maslowiec";

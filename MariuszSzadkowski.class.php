@@ -1,12 +1,13 @@
 <?php
 
+require_once 'person.abstract.php';
 
 /**
 * 
 */
-class MariuszSzadkowski
+class MariuszSzadkowski extends Person
 {
 	protected $firstName='Mariusz';
-	protected $lastName;='Szadkowski';
+	protected $lastName='Szadkowski';
 
 }
