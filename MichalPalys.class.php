@@ -4,5 +4,6 @@
  */
  class MichalPalys
  {
- 	
+ 	protected $firstName;
+ 	protected $lastName;
  }
