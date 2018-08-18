@@ -11,10 +11,10 @@ class KrzysztofChru extends Person  {
     
     public function saveData()
     {
-      if (!file_exists("Data")) { mkdir("Data", 0777); }
+        if (!file_exists("Data")) { mkdir("Data", 0777); }
       
-      $handle = fopen("Data/KrzysztofChru.counter.txt", 'w');
-      fwrite($handle, $this->count);
+        $handle = fopen("Data/KrzysztofChru.counter.txt", 'w');
+        fwrite($handle, $this->count);
      
     }
     
