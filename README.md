@@ -5,3 +5,5 @@ Tworzymy plik z klasą, która będzie miała nazwę składającą się z imieni
 AleksanderCichowicz.class.php - nazwa pliku
 class AleksanderCichowicz - nazwa klasy w środku
 każda klasa ma zawierać chronione zmienne firstName oraz lastName oraz domyślnie przypisane wartości odpowiadające waszym danym
+
+aa
