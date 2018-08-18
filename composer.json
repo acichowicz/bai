@@ -1,0 +1,9 @@
+{
+    "name": "vendor",
+    "description": "Class sample",
+    "type": "project",
+    "require": {},
+    "autoload": {
+        "psr-4": {"App\\": "src/"}
+    }
+}
