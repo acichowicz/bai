@@ -7,8 +7,10 @@ class AleksanderCichowicz - nazwa klasy w środku
 każda klasa ma zawierać chronione zmienne firstName oraz lastName oraz domyślnie przypisane wartości odpowiadające waszym danym
 
 <?php
+require_once 'person.abstract.php';
 
-class DominikWiktorowicz {
-  protected $firstName;
-  protected $lastName;
-    }
+class DominikWiktorowicz extends Person 
+{
+  protected $firstName = 'Dominik';
+  protected $lastName = 'Wiktorowicz';
+}

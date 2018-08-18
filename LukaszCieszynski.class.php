@@ -6,7 +6,10 @@
  * Time: 09:56
  */
 
-class LukaszCieszynski implements PersonInterface {
-    protected $firstName;
-    protected $lastName;
+require_once 'person.abstract.php';
+
+class LukaszCieszynski extends Person {
+    protected $firstName = 'Łukasz';
+    protected $lastName = 'Cieszyński';
+
 }
