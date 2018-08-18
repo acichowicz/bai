@@ -1,8 +1,10 @@
 <?php
 
-class DawidKlimowicz {
+require_once 'person.abstract.php';
 
-    protected $first_name = 'Dawid';
-    protected $last_name = 'Klimowicz';
+class DawidKlimowicz extends Person {
+
+    protected $firstName = 'Dawid';
+    protected $lastName = 'Klimowicz';
 
 }
