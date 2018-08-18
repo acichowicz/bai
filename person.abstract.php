@@ -20,8 +20,7 @@ abstract class Person implements PersonInterface {
         return $count;
     }
 
-    public function saveData()
-    {
+    public function saveData() {
         $folder = glob('data');
         $this->counter = $this->getCounter($this->counter);
 
