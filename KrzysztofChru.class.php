@@ -2,6 +2,7 @@
 
 require_once 'person.abstract.php';
 
+
 class KrzysztofChru extends Person  {
     protected $firstName = "Krzysztof";
     protected $lastName = "Chrusciel";
