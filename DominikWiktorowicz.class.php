@@ -9,7 +9,6 @@ każda klasa ma zawierać chronione zmienne firstName oraz lastName oraz domyśl
 <?php
 
 class DominikWiktorowicz {
-
-        public function idz() {
-        return "hello";
+  protected $firstName;
+  protected $lastName;
     }
