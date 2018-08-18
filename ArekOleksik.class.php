@@ -1,6 +1,6 @@
 <?php
 
-    class ArkadiuszOleksik{
+    class ArkadiuszOleksik {
         protected  $firstName = "Arkadiusz";
         protected  $lastName = "Oleksik";
     }
