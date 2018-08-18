@@ -20,7 +20,7 @@ class DawidKlimowicz extends Person {
     
     public function getCounter(){
         $this->counter = $this->counter + 1;
-        return $this->counter;
+        echo $this->counter;
     }
 
 }
