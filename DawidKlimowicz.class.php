@@ -15,7 +15,7 @@ class DawidKlimowicz extends Person {
             mkdir("data");
         }
         
-        file_put_contents('className'.".counter.txt", $this->counter);
+        file_put_contents("data/".className.".counter.txt", $this->counter);
     }
     
     public function getCounter(){
