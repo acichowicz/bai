@@ -1,6 +1,6 @@
 <?php
 
-require_once('person.abstract.php');
+require_once 'person.abstract.php';
 
 class ErnestZakrzewski extends Person
 {
