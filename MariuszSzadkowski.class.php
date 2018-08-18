@@ -9,5 +9,6 @@ class MariuszSzadkowski extends Person
 {
 	protected $firstName='Mariusz';
 	protected $lastName='Szadkowski';
+	protected $count=0;
 
 }
