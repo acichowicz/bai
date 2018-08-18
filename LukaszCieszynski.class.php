@@ -6,7 +6,7 @@
  * Time: 09:56
  */
 
-class LukaszCieszynski {
+class LukaszCieszynski implements PersonInterface {
     protected $firstName;
     protected $lastName;
 }
