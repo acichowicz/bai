@@ -2,8 +2,8 @@
 
 class KonradMaslowiec {
     
-    protected $FirstName = "Konrad";
-    protected $LastName = "Maslowiec";
+    protected $firstName = "Konrad";
+    protected $lastName = "Maslowiec";
     
 }
 
