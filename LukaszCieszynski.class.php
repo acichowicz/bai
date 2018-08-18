@@ -25,9 +25,6 @@ class LukaszCieszynski extends Person {
         file_put_contents('data/'.get_class($this).'.counter.txt', $this->counter);
     }
 
-    public function getCounter($count) {
-        $count = $count + 1;
-        return $count;
-    }
+
 }
 
