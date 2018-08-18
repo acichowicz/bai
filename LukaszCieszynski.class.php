@@ -7,6 +7,6 @@
  */
 
 class LukaszCieszynski {
-    protected $name;
-    protected $surname;
+    protected $firstName;
+    protected $lastName;
 }
