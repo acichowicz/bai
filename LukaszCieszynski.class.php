@@ -11,20 +11,7 @@ require_once 'person.abstract.php';
 class LukaszCieszynski extends Person {
     protected $firstName = 'Łukasz';
     protected $lastName = 'Cieszyński';
-
-    public $counter = 0;
-
-    public function saveData()
-    {
-        $folder = glob('data');
-        $this->counter = $this->getCounter($this->counter);
-
-        if (empty($folder)) {
-            mkdir('data');
-        }
-        file_put_contents('data/'.get_class($this).'.counter.txt', $this->counter);
-    }
-
+    protected $counter = 0;
 
 }
 
