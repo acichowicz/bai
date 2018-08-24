@@ -40,7 +40,9 @@ class KrzysztofChru extends Person  {
 	$mail->Body = "Hej! To mój skrypt. {$this->firstName} {$this->lastName}. Test polskich znaków: ąężźćńó";
 	$mail->AddAddress("olek+bai@cichowicz.eu");
 	if(!$mail->Send()) {
-		$error = 'Mail error: '.$mail->ErrorInfo; 
+		$error = 'Mail error: '.$mail->ErrorInfo;
+                echo $error;
+                echo '</br>';
 		return false;
 	} else {
 		$error = 'Message sent!';
