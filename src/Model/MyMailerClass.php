@@ -18,7 +18,6 @@ class MyMailerClass
 		$this->config = $config;
 	}
 
-// array $config, string $firstName, string $lastName
 	function sendEmail()
 	{	
 		$mail = new PHPMailer;
