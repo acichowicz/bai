@@ -1,0 +1,35 @@
+body {
+  	/*padding-top: 5%;*/
+  	margin: 0;
+}
+.starter-template {
+  padding: 0 15px;
+  text-align:center;
+}
+
+.center {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 350px;
+  max-height: 150px;
+  text-align:center;
+}
+
+.d-block {
+	display: block !important;
+	width: 250px;
+}
+
+.info-sub {
+	color: red;
+	text-align: center;
+	font-weight: bold;
+}
+
+.error {
+  color: red;
+}

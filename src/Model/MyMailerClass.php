@@ -11,46 +11,65 @@ class MyMailerClass
 {
 	public $person;
 	public $config;
+	protected $phpMailer;
+	protected $activeString;
 	
-	function __construct(Array $config, PersonAbstract $person = null)
+	// function __construct(Array $config, PersonAbstract $person = null)
+	// {
+	// 	$this->person = $person;
+	// 	$this->config = $config;
+	// }
+
+	function __construct(array $config, PHPMailer $phpMailer)
 	{
-		$this->person = $person;
+		$this->phpMailer = $phpMailer;
 		$this->config = $config;
+	}
+
+	public function getActiveString(): string
+	{
+		return $this->activeString;
+	}
+
+	public function setActiveString(string $str)
+	{
+		$this->activeString = $str;
 	}
 
 	function sendEmail()
 	{	
-		$mail = new PHPMailer;
-		$mail->setLanguage("pl");
+		$this->phpMailer->setLanguage("pl");
 		//Tell PHPMailer to use SMTP
-		$mail->isSMTP();
+		$this->phpMailer->isSMTP();
 		
 		//Set the hostname of the mail server
-		$mail->Host = $this->config['host'];
+		$this->phpMailer->Host = $this->config['host'];
 		//Set the SMTP port number - likely to be 25, 465 or 587
-		$mail->Port = $this->config['port'];
+		$this->phpMailer->Port = $this->config['port'];
 		//Whether to use SMTP authentication
-		$mail->SMTPAuth = true;
+		$this->phpMailer->SMTPAuth = true;
 		//Username to use for SMTP authentication
-		$mail->Username = $this->config['username'];
+		$this->phpMailer->Username = $this->config['username'];
 		//Password to use for SMTP authentication
-		$mail->Password = $this->config['password'];
+		$this->phpMailer->Password = $this->config['password'];
 		
-		$mail->CharSet = "UTF-8";
+		$this->phpMailer->CharSet = "UTF-8";
 		//Set who the message is to be sent from
-		$mail->setFrom($this->config['username'], 'Michał Pałys');
+		$this->phpMailer->setFrom($this->config['username'], 'Michał Pałys');
 		
 		//Set who the message is to be sent to olek+bai@cichowicz.eu
-		$mail->addAddress('michael.palys@wp.pl');
+		$this->phpMailer->addAddress('michael.palys@wp.pl');
 		//Set the subject line
-		$mail->Subject = "smtp sendMail test";
+		$this->phpMailer->Subject = "Mail aktywacyjny";
 		//Replace the plain text body with one created manually
-		$mail->MsgHTML("<p>Hej! To mój skrypt." . $this->person->getFirstName() . $this->person->getLastName() . "Test polskich znaków: ąężźćńó</p>");
+
+		$this->phpMailer->MsgHTML("<p>Link aktywacyjny: <a href='http://192.168.56.10/oop/bai/activate.php?hash=$this->activeString'>http://192.168.56.10/oop/bai/activate.php?hash=$this->activeString</a></p>");
 		// $mail->Body = "Hej! To mój skrypt. $firstName $lastName . Test polskich znaków: ąężźćńó";
 
 		//send the message, check for errors
-		if (!$mail->send()) {
-		    echo 'Mailer Error: ' . $mail->ErrorInfo;
+		if (!$this->phpMailer->send()) {
+		    echo 'Mailer Error: ' . $this->phpMailer->ErrorInfo;
+		    die();
 		} else {
 		    echo 'Message sent!';
 		}

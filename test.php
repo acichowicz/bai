@@ -19,8 +19,29 @@ $mp->getCounter();
 $mp->getCounter();
 $mp->getCounter();
 
+$mp->getCounter();
+
+
 $myMailer = new MyMailerClass(ConfigClass::getConfig(), $mp);
 
 $myMailer->sendEmail();
 
-$mp->saveData();
+$mp->saveData('data');
+
+if (file_exists('data/MichalPalys.counter.txt')) {
+	$fileContentArray = file('data/MichalPalys.counter.txt');
+	foreach ($fileContentArray as $line) {
+		echo $line;
+	}
+} else {
+	echo "<p> error </p>";
+}
+
+$dns = 'mysql:dbname=bai;host=localhost';
+$pdo = new PDO($dns, 'dev', 'dev');
+
+var_dump($pdo);
+
+$msql = new mysqli('localhost', 'dev', 'dev', 'bai');
+
+var_dump($msql);
