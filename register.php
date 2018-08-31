@@ -16,16 +16,9 @@
         <?php
           if (isset($_GET['register'])) {
               if ($_REQUEST && $_GET['register'] == 'true') {
-                echo "<h1 class='info-sub'>Dziękujemy za rejestrację!</h1>";
+                echo "<p class='info-sub'>Na podany adres email został wysłany link aktywacyjny!</p>";
               }
             }
-          if (isset($_GET['active'])) {
-            if ($_REQUEST && $_GET['active'] == 'true') {
-              echo "<h1 class='info-sub'>Konto aktywowane! Możesz się zalogować</h1>";
-            } else {
-              echo "<h1 class='info-sub'>Konto nieaktywne! Coś poszło nie tak</h1>";
-            }
-          }
         ?>
         <h1>Rejestracja</h1>
         <form method="POST" action="register_action.php">
@@ -37,6 +30,10 @@
                 echo '<div class="error">' . $_SESSION['e_imie'] . '</div>';
                 unset($_SESSION['e_imie']);
               }
+              if (isset($_SESSION['e_hasSpaces_imie'])) {
+                echo '<div class="error">' . $_SESSION['e_hasSpaces_imie'] . '</div>';
+                unset($_SESSION['e_hasSpaces_imie']);
+              }
             ?>
           </div>
           <div class="mb-3">
@@ -46,6 +43,10 @@
               if (isset($_SESSION['e_nazwisko'])) {
                 echo '<div class="error">' . $_SESSION['e_nazwisko'] . '</div>';
                 unset($_SESSION['e_nazwisko']);
+              }
+              if (isset($_SESSION['e_hasSpaces_nazwisko'])) {
+                echo '<div class="error">' . $_SESSION['e_hasSpaces_nazwisko'] . '</div>';
+                unset($_SESSION['e_hasSpaces_nazwisko']);
               }
             ?>
           </div>

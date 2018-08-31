@@ -1,9 +1,11 @@
-# bai
-BAI
+# SingIn Form Project
+***
 
-Tworzymy plik z klasą, która będzie miała nazwę składającą się z imienia i nazwiska bez polskich znaków
-AleksanderCichowicz.class.php - nazwa pliku
-class AleksanderCichowicz - nazwa klasy w środku
-każda klasa ma zawierać chronione zmienne firstName oraz lastName oraz domyślnie przypisane wartości odpowiadające waszym danym
+## installation
 
-aa
+1. get repository to your local machine
+2. in console run `php composer.phar update`
+3. create database called `bai` and import into it mysql base from file `bai.sql` located in main project folder
+4. rename files `db_config.php.sample` and `mailer_config.php.sample` to correct PHP files and fill up configuration filies with propper data 
+
+Have fun!

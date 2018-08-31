@@ -13,12 +13,6 @@ class MyMailerClass
 	public $config;
 	protected $phpMailer;
 	protected $activeString;
-	
-	// function __construct(Array $config, PersonAbstract $person = null)
-	// {
-	// 	$this->person = $person;
-	// 	$this->config = $config;
-	// }
 
 	function __construct(array $config, PHPMailer $phpMailer)
 	{
@@ -36,7 +30,7 @@ class MyMailerClass
 		$this->activeString = $str;
 	}
 
-	function sendEmail()
+	function sendEmail($userEmail)
 	{	
 		$this->phpMailer->setLanguage("pl");
 		//Tell PHPMailer to use SMTP
@@ -58,7 +52,7 @@ class MyMailerClass
 		$this->phpMailer->setFrom($this->config['username'], 'Michał Pałys');
 		
 		//Set who the message is to be sent to olek+bai@cichowicz.eu
-		$this->phpMailer->addAddress('michael.palys@wp.pl');
+		$this->phpMailer->addAddress($userEmail);
 		//Set the subject line
 		$this->phpMailer->Subject = "Mail aktywacyjny";
 		//Replace the plain text body with one created manually
